@@ -24,12 +24,13 @@
         def list_tasks(self):
             # Returns:
             #    a list of task that was added
-            # list =[{task: "Walk the dog", status: "incomplete"}, {}, {}]
+            #    list =["Walk the dog"]
             # Side-effects:
             #    Throws an exception if no task is set
+            #    raise Exception("No tasks were given")
             pass
 
-        def change_status_to_complete(self, task):
+        def remove_task(self, task):
             # Parameters:
             #    task: string represents a single task
             #    status: string represents completed status
@@ -54,7 +55,7 @@
 
     tasker = TaskTracker()
     tasker.add("Walk the dog")
-    tasker.list_tasks() ==> [task: "Walk the dog"]
+    tasker.list_tasks() ==> ["Walk the dog"]
 
     """
     Given a task
@@ -74,6 +75,13 @@
 
     tasker = TaskTracker()
     tasker.add("Walk the dog")
-    tasker.change_status_to_complete("Wash the dishes")
+    tasker.remove_task("Wash the dishes")
     tasker.list_tasks() ==> ["Walk the dog"]
+
+    """
+    Throwing an exception when task weren't given
+    """
+
+    tasker = TaskTracker()
+    tasker.list_tasks() ==> "No tasks were given"
 
